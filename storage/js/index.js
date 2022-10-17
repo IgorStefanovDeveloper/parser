@@ -13,7 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const sel = document.querySelectorAll('.parse-form__option');
         for (let i = 0; i < sel.length; i++) {
-            types = types + sel[i].textContent + "|";
+            if(sel[i].selected) {
+                types = types + sel[i].textContent + "|";
+            }
+        }
+
+        if(types.slice(-1) == '|'){
+            types = types.slice(0,-1);
         }
 
         if (document.querySelector('#parse-data').checked) {

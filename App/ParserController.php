@@ -58,7 +58,7 @@ class ParserController
             $bodyPattern .= '(?!data:image)';
         }
 
-        $bodyPattern .= '(.*';
+        $bodyPattern .= '([^>]*';
 
         if ($searchTypes !== false) {
             $bodyPattern .= '[.](' . $types . '))';
@@ -66,7 +66,7 @@ class ParserController
             $bodyPattern .= '?)';
         }
 
-        $endPattern = '["\'][^>]*>/isU';
+        $endPattern = '["\'][^>]*?>/isU';
 
         $pattern = $startPattern . $bodyPattern . $endPattern;
 
@@ -78,6 +78,7 @@ class ParserController
                 $imagesPath[] = $imagePath;
             }
         }
+        var_dump($images);
         return $imagesPath;
     }
 
