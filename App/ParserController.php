@@ -78,7 +78,7 @@ class ParserController
                 $imagesPath[] = $imagePath;
             }
         }
-        var_dump($images);
+
         return $imagesPath;
     }
 

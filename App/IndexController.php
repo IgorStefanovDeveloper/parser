@@ -7,9 +7,14 @@ class IndexController
     public function renderResult(): void
     {
         $parser = new ParserController();
-        $images = $parser->parseUrl($_REQUEST['parse'], $_REQUEST['usedata'], $_REQUEST['usetype'], $_REQUEST['types']);
+        $userData = $_REQUEST['usedata'] ?? false;
+        $userType = $_REQUEST['usetype'] ?? false;
+        $types = $_REQUEST['types'] ?? false;
 
+        $images = $parser->parseUrl($_REQUEST['parse'], $userData, $userType, $types);
+        include __DIR__ . "/../view/header.php";
         include __DIR__ . "/../view/result.php";
+        include __DIR__ . "/../view/footer.php";
     }
 
     public function renderMain(): void

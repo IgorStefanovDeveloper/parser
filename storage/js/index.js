@@ -1,9 +1,14 @@
 import "../scss/styles.scss";
 import "../css/bootstrap.min.css";
+import YandexDisk from "./YandexDisk";
 
 document.addEventListener('DOMContentLoaded', function () {
+    let yandex = new YandexDisk();
+    yandex.setObservers();
+
     const form = document.querySelector('.parse-form');
 
+    /* ajax submit
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         let formData = new FormData();
@@ -38,9 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     });
+*/
 
     function xhrRequest(params, send = null) {
-        let url = 'http://parser.loc/?';
+        let url = 'https://parser.ru/?';
         for (let key in params) {
             url = url + "&" + key + "=" + params[key];
         }

@@ -17,3 +17,6 @@
     </select>
     <button class="parse-form__submit">Спарсить</button>
 </form>
+<button class="js-yandex-auth-link">Использовать сервис Yandex Disk</button>
+<button class="js-yandex-auth-token" data-href="" >Авторизоватся</button>
+<div class="js-result"></div>

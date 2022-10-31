@@ -26,7 +26,7 @@ if (!isset($images) || isset($images) && !is_array($images)) {
             </div>
             <div class="info-table__column">
                 <div class="actions">
-                    <div class="actions__btn">Скачать</div>
+                    <div class="actions__btn">Загрузить на яндекс диск</div>
                 </div>
             </div>
         </div>
